@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>판촉사랑 · 세상의 모든 판촉</title>
+<meta name="description" content="쿠팡·네이버·지마켓 어디서 본 상품이든 — 로고 인쇄, 고급 포장, 세금계산서·후결제까지 한 번에. 관공서·기업 맞춤 B2B 원스톱 판촉 솔루션." />
+<meta property="og:title" content="판촉사랑 · 세상의 모든 판촉" />
+<meta property="og:description" content="네이버·쿠팡에 있는 모든 상품을 판촉물로 만들어 드립니다. 로고 인쇄 + 고급 포장 + 세금계산서 + 후결제까지." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#fffaf3;
+    --surface:#ffffff;
+    --ink:#1c1a17;
+    --muted:#6b6661;
+    --line:#ece6dc;
+    --brand:#ff5a1f;
+    --brand-dark:#e64a10;
+    --brand-soft:#fff1ea;
+    --kakao:#fee500;
+    --kakao-ink:#1c1a17;
+    --ok:#22a06b;
+    --shadow: 0 10px 30px rgba(28,26,23,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  input,select,textarea{font-family:inherit;font-size:16px;color:var(--ink)}
+
+  .container{max-width:980px;margin:0 auto;padding:0 20px}
+
+  /* ===== Nav ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,250,243,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.01em}
+  .logo-mark{width:28px;height:28px;border-radius:8px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:900}
+  .nav-cta{background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600}
+
+  /* ===== Hero ===== */
+  .hero{padding:56px 0 32px;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-size:13px;font-weight:600}
+  .eyebrow .dot{width:6px;height:6px;background:var(--brand);border-radius:50%}
+  h1{font-size:clamp(32px,6vw,52px);line-height:1.15;margin:18px 0 14px;letter-spacing:-.03em;font-weight:800}
+  h1 .accent{color:var(--brand)}
+  .sub{font-size:clamp(15px,2.4vw,18px);color:var(--muted);max-width:640px;margin:0 auto 28px}
+  .hero-cta{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:12px;font-weight:700;font-size:15px;transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(255,90,31,.25)}
+  .btn-primary:hover{background:var(--brand-dark)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .trust{margin-top:22px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;color:var(--muted);font-size:13px}
+  .trust span{display:inline-flex;align-items:center;gap:6px}
+  .trust svg{width:16px;height:16px;color:var(--ok)}
+
+  /* ===== Steps ===== */
+  .steps{padding:24px 0 8px}
+  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .step-num{display:inline-flex;width:28px;height:28px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-weight:800;align-items:center;justify-content:center;font-size:13px}
+  .step h3{margin:10px 0 4px;font-size:16px}
+  .step p{margin:0;color:var(--muted);font-size:14px}
+  @media(max-width:720px){.step-grid{grid-template-columns:1fr}}
+
+  /* ===== Quote section ===== */
+  .quote{padding:48px 0 24px}
+  .quote-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:28px;}
+  .quote-title{font-size:22px;font-weight:800;margin:0 0 4px;letter-spacing:-.02em}
+  .quote-desc{margin:0 0 20px;color:var(--muted);font-size:14px}
+
+  .tabs{display:flex;gap:6px;background:#f5efe5;padding:5px;border-radius:12px;margin-bottom:18px}
+  .tab{flex:1;padding:10px 12px;border-radius:9px;font-weight:600;font-size:14px;color:var(--muted);text-align:center}
+  .tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+
+  .search-row{display:flex;gap:8px}
+  .search-row input{flex:1;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:#fff;outline:none;transition:border-color .12s ease,box-shadow .12s ease}
+  .search-row input:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(255,90,31,.12)}
+  .search-row button{padding:0 18px;border-radius:12px;background:var(--ink);color:#fff;font-weight:700;font-size:14px}
+
+  .hint{margin:8px 2px 0;color:var(--muted);font-size:12.5px}
+
+  .results{margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(max-width:560px){.results{grid-template-columns:1fr}}
+  .result{display:flex;gap:10px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;transition:border-color .12s, background .12s}
+  .result:hover{border-color:var(--brand);background:#fffaf6}
+  .result.selected{border-color:var(--brand);background:var(--brand-soft)}
+  .result img{width:72px;height:72px;border-radius:8px;object-fit:cover;flex-shrink:0;background:#f0eadf}
+  .result-meta{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+  .result-title{font-size:13.5px;font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .result-price{font-size:14px;font-weight:800;color:var(--brand-dark)}
+  .result-mall{font-size:11.5px;color:var(--muted)}
+
+  .selected-box{margin-top:16px;display:none;align-items:center;gap:12px;padding:12px;border-radius:12px;background:var(--brand-soft);border:1px dashed var(--brand)}
+  .selected-box.show{display:flex}
+  .selected-box img{width:48px;height:48px;border-radius:8px;object-fit:cover;background:#fff}
+  .selected-box .t{font-size:13px;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .selected-box button{font-size:13px;color:var(--brand-dark);font-weight:600}
+
+  .form-grid{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .label{font-size:13px;font-weight:600;color:#3a3631}
+  .label .req{color:var(--brand);margin-left:2px}
+  .field input,.field select,.field textarea{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;outline:none;transition:border-color .12s, box-shadow .12s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(255,90,31,.12)}
+  .field textarea{min-height:90px;resize:vertical}
+
+  .submit-row{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:560px){.submit-row{grid-template-columns:1fr}}
+  .btn-kakao{background:var(--kakao);color:var(--kakao-ink);padding:16px;border-radius:12px;font-weight:800;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+  .btn-kakao:hover{filter:brightness(.97)}
+  .btn-email{background:var(--ink);color:#fff;padding:16px;border-radius:12px;font-weight:800;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+  .btn-email:hover{background:#000}
+
+  /* ===== Why ===== */
+  .why{padding:48px 0}
+  .why h2{font-size:clamp(24px,4vw,32px);letter-spacing:-.02em;margin:0 0 6px;text-align:center}
+  .why .sub2{text-align:center;color:var(--muted);margin:0 0 28px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:720px){.why-grid{grid-template-columns:1fr}}
+  .why-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .why-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-soft);color:var(--brand-dark);display:grid;place-items:center;margin-bottom:12px;font-size:20px}
+  .why-card h3{margin:0 0 6px;font-size:17px}
+  .why-card p{margin:0;color:var(--muted);font-size:14px}
+
+  /* ===== FAQ-lite / strip ===== */
+  .strip{margin:20px 0 40px;background:var(--ink);color:#fff;border-radius:24px;padding:28px;text-align:center}
+  .strip h3{margin:0 0 6px;font-size:20px;letter-spacing:-.01em}
+  .strip p{margin:0 0 16px;color:#c9c5be;font-size:14px}
+  .strip .btn-primary{background:#fff;color:var(--ink)}
+  .strip .btn-primary:hover{background:#f3eee5}
+
+  /* ===== Footer ===== */
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+  footer .biz{margin-top:8px;font-size:12px;color:#9c968e}
+
+  /* ===== Toast ===== */
+  .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s, transform .2s;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:90vw;text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ===== Loading skeleton ===== */
+  .skeleton{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+  @media(max-width:560px){.skeleton{grid-template-columns:1fr}}
+  .sk{height:92px;border-radius:12px;background:linear-gradient(90deg,#f3ede3 0%,#faf5ec 50%,#f3ede3 100%);background-size:200% 100%;animation:sh 1.2s infinite}
+  @keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+  .empty{margin-top:18px;text-align:center;color:var(--muted);font-size:14px;padding:24px;border:1px dashed var(--line);border-radius:12px;background:#fffaf3}
+</style>
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="logo">
+      <div class="logo-mark">판</div>
+      <span>판촉사랑</span>
+    </div>
+    <a class="nav-cta" href="#quote">견적 요청</a>
+  </div>
+</header>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> B2B · 관공서 · 기업 전용 판촉 솔루션</div>
+    <h1>세상의 모든 상품을<br/><span class="accent">판촉물</span>로 만들어 드립니다</h1>
+    <p class="sub">쿠팡·네이버·지마켓 어디서 본 상품이든 — <b>로고 인쇄, 고급 선물 포장, 세금계산서, 후결제</b>까지 판촉사랑이 한 번에 처리해 드립니다.</p>
+
+    <div class="hero-cta">
+      <a href="#quote" class="btn btn-primary">상품 견적 요청하기 →</a>
+      <a href="#why" class="btn btn-ghost">왜 판촉사랑인가요?</a>
+    </div>
+
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 세금계산서 발행</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 후결제 가능</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 자체 인쇄/포장 공장</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========= STEPS ========= -->
+<section class="steps">
+  <div class="container">
+    <div class="step-grid">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>원하는 상품 검색·링크</h3>
+        <p>네이버 쇼핑에서 검색하거나, 쿠팡·지마켓 URL을 그대로 붙여넣으세요.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>예산·수량 입력하고 견적 요청</h3>
+        <p>접수하신 내용을 빠르게 검토 후 카카오톡 또는 이메일로 연락드리겠습니다.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>인쇄·포장·납품 한 번에</h3>
+        <p>로고 인쇄, 고급 선물 포장, 세금계산서, 후결제까지 판촉사랑이 처리합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= QUOTE ========= -->
+<section class="quote" id="quote">
+  <div class="container">
+    <div class="quote-card">
+      <h2 class="quote-title">견적 요청하기</h2>
+      <p class="quote-desc">상품을 검색해서 고르거나, 다른 쇼핑몰 URL을 그대로 붙여넣으셔도 됩니다.</p>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="search">🔍 네이버 쇼핑에서 검색</div>
+        <div class="tab" data-tab="url">🔗 상품 URL 붙여넣기</div>
+      </div>
+
+      <!-- 검색 탭 -->
+      <div id="pane-search">
+        <div class="search-row">
+          <input id="q" type="text" placeholder="예) 무선 충전기, 텀블러, 보조배터리..." />
+          <button id="searchBtn" type="button">검색</button>
+        </div>
+        <p class="hint">상품 카드를 클릭하면 견적 요청 폼에 자동으로 담깁니다.</p>
+        <div id="results"></div>
+      </div>
+
+      <!-- URL 탭 -->
+      <div id="pane-url" style="display:none">
+        <div class="search-row">
+          <input id="urlInput" type="url" placeholder="https://www.coupang.com/... 또는 https://item.gmarket.co.kr/..." />
+        </div>
+        <p class="hint">쿠팡·지마켓·11번가·네이버 어떤 상품 페이지 URL이든 OK</p>
+      </div>
+
+      <!-- 선택된 상품 -->
+      <div id="selectedBox" class="selected-box">
+        <img id="selectedImg" alt="" />
+        <div class="t" id="selectedTitle">선택된 상품 없음</div>
+        <button id="clearSelected" type="button">제거</button>
+      </div>
+
+      <!-- 견적 폼 -->
+      <div class="form-grid">
+        <div class="field">
+          <label class="label">수량<span class="req">*</span></label>
+          <input id="qty" type="number" min="1" placeholder="예) 100" />
+        </div>
+        <div class="field">
+          <label class="label">개당 예산</label>
+          <select id="budget">
+            <option value="">선택 안 함</option>
+            <option>~ 5,000원</option>
+            <option>5,000 ~ 10,000원</option>
+            <option>10,000 ~ 20,000원</option>
+            <option>20,000 ~ 50,000원</option>
+            <option>50,000원 이상</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label">희망 납기일</label>
+          <input id="dueDate" type="date" />
+        </div>
+        <div class="field">
+          <label class="label">인쇄·포장 옵션</label>
+          <select id="printOpt">
+            <option value="">선택 안 함</option>
+            <option>로고 1도 인쇄</option>
+            <option>풀 컬러 인쇄</option>
+            <option>선물 포장(슬리브)</option>
+            <option>선물 포장(케이스)</option>
+            <option>기타 (메모에 작성)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label">소속(회사/기관명)<span class="req">*</span></label>
+          <input id="company" type="text" placeholder="예) ○○구청, ○○주식회사" />
+        </div>
+        <div class="field">
+          <label class="label">담당자명<span class="req">*</span></label>
+          <input id="name" type="text" placeholder="이름" />
+        </div>
+        <div class="field">
+          <label class="label">연락처<span class="req">*</span></label>
+          <input id="phone" type="tel" placeholder="010-0000-0000" />
+        </div>
+        <div class="field">
+          <label class="label">이메일</label>
+          <input id="email" type="email" placeholder="quote@example.com" />
+        </div>
+        <div class="field full">
+          <label class="label">추가 요청사항</label>
+          <textarea id="memo" placeholder="로고 파일, 납품 장소, 결제 방식(선결제/후결제) 등 자유롭게 적어주세요."></textarea>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button class="btn-kakao" id="kakaoBtn" type="button">
+          💬 카카오톡으로 상담하기
+        </button>
+        <button class="btn-email" id="emailBtn" type="button">
+          ✉️ 이메일로 견적받기
+        </button>
+      </div>
+      <p class="hint" style="margin-top:10px;text-align:center">
+        ※ 카카오톡 버튼은 입력 내용을 클립보드에 자동 복사 후 채팅창을 엽니다. 채팅창에 붙여넣기만 해주세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= WHY ========= -->
+<section class="why" id="why">
+  <div class="container">
+    <h2>왜 판촉사랑인가요?</h2>
+    <p class="sub2">쿠팡·네이버에서는 할 수 없는 3가지를 해결합니다.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">📑</div>
+        <h3>세금계산서 + 후결제</h3>
+        <p>관공서·기관 행정 절차에 맞춰 견적서, 거래명세서, 세금계산서, 후결제까지 정식 처리합니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🖨️</div>
+        <h3>로고 인쇄 + 고급 포장</h3>
+        <p>자체 인쇄·포장 공장에서 브랜드 로고 인쇄와 선물용 패키지까지 한 번에 마감합니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>예산 맞춤 큐레이션</h3>
+        <p>"인당 2만 원, 100세트"처럼 예산·수량·납기를 알려주시면 적합한 상품을 큐레이션해 드립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CTA STRIP ========= -->
+<section>
+  <div class="container">
+    <div class="strip">
+      <h3>지금 견적을 요청해 보세요</h3>
+      <p>빠르게 검토 후 연락드리겠습니다 · 견적은 무료입니다</p>
+      <a href="#quote" class="btn btn-primary">견적 요청하러 가기 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><b>판촉사랑</b> · 세상의 모든 판촉</div>
+    <div class="biz">© 판촉사랑. All rights reserved.</div>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<!-- ===================== JS ===================== -->
+<script>
+// =========================================================
+// ⚙️ 설정 — 배포 시 본인 정보로 변경하세요
+// =========================================================
+const CONFIG = {
+  // 카카오톡 채널/오픈채팅 URL (예: 'http://pf.kakao.com/_xxxxx/chat')
+  KAKAO_CHAT_URL: 'http://pf.kakao.com/_yourChannelId/chat',
+  // 견적 받을 이메일
+  CONTACT_EMAIL: 'quote@panchok-sarang.kr',
+};
+// =========================================================
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+// ---------- Toast ----------
+let toastTimer;
+function toast(msg){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2400);
+}
+
+// ---------- Tabs ----------
+$$('.tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    $$('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.dataset.tab;
+    $('#pane-search').style.display = target === 'search' ? '' : 'none';
+    $('#pane-url').style.display    = target === 'url'    ? '' : 'none';
+  });
+});
+
+// ---------- 선택된 상품 ----------
+let selected = null; // {title, image, link, price, mall}
+function setSelected(item){
+  selected = item;
+  const box = $('#selectedBox');
+  if (!item){ box.classList.remove('show'); return; }
+  $('#selectedImg').src = item.image || '';
+  $('#selectedTitle').textContent = item.title || '상품';
+  box.classList.add('show');
+  // 결과 카드 강조
+  $$('.result').forEach(r=>{
+    r.classList.toggle('selected', r.dataset.link === item.link);
+  });
+  // 부드럽게 스크롤
+  box.scrollIntoView({behavior:'smooth', block:'center'});
+}
+$('#clearSelected').addEventListener('click', ()=>{
+  setSelected(null);
+  $$('.result').forEach(r=>r.classList.remove('selected'));
+});
+
+// ---------- 네이버 쇼핑 검색 ----------
+function stripHtml(s){
+  return (s||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+}
+function formatPrice(p){
+  if (!p) return '';
+  return Number(p).toLocaleString('ko-KR') + '원';
+}
+
+async function doSearch(){
+  const q = $('#q').value.trim();
+  if (!q){ toast('검색어를 입력해주세요'); return; }
+
+  const box = $('#results');
+  box.innerHTML = '<div class="skeleton"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>';
+
+  try {
+    const res = await fetch('/api/search?query=' + encodeURIComponent(q));
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const items = (data.items || []).slice(0, 8).map(it=>({
+      title: stripHtml(it.title),
+      image: it.image,
+      link: it.link,
+      price: it.lprice,
+      mall: it.mallName,
+    }));
+    if (items.length === 0){
+      box.innerHTML = '<div class="empty">검색 결과가 없습니다. 다른 검색어를 입력해보세요.</div>';
+      return;
+    }
+    box.innerHTML = '<div class="results">' + items.map(it => `
+      <div class="result" data-link="${it.link}">
+        <img src="${it.image}" alt="" onerror="this.style.visibility='hidden'" />
+        <div class="result-meta">
+          <div class="result-title">${it.title}</div>
+          <div>
+            <div class="result-price">${formatPrice(it.price)}</div>
+            <div class="result-mall">${it.mall || ''}</div>
+          </div>
+        </div>
+      </div>
+    `).join('') + '</div>';
+
+    box.querySelectorAll('.result').forEach((el, idx)=>{
+      el.addEventListener('click', ()=> setSelected(items[idx]));
+    });
+  } catch (err){
+    console.error(err);
+    box.innerHTML = `<div class="empty">
+      검색에 실패했어요. 잠시 후 다시 시도해주세요.<br/>
+      <small style="opacity:.7">(${err.message}) — 배포 후 NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경변수가 설정되었는지 확인하세요.</small>
+    </div>`;
+  }
+}
+$('#searchBtn').addEventListener('click', doSearch);
+$('#q').addEventListener('keydown', e=>{ if(e.key==='Enter') doSearch(); });
+
+// ---------- 견적 문구 생성 ----------
+function buildMessage(){
+  const get = id => ($(id)?.value || '').trim();
+  const qty = get('#qty');
+  const budget = get('#budget');
+  const due = get('#dueDate');
+  const printOpt = get('#printOpt');
+  const company = get('#company');
+  const name = get('#name');
+  const phone = get('#phone');
+  const email = get('#email');
+  const memo = get('#memo');
+  const urlInput = get('#urlInput');
+
+  const productLine = selected
+    ? `${selected.title}\n   가격: ${formatPrice(selected.price)} / ${selected.mall || ''}\n   ${selected.link}`
+    : (urlInput ? `(URL 입력)\n   ${urlInput}` : '(상품 선택 또는 URL 미입력)');
+
+  return [
+    '[판촉사랑 견적 요청]',
+    '',
+    '■ 상품',
+    '   ' + productLine,
+    '',
+    '■ 요청 내역',
+    `   수량: ${qty || '-'} 개`,
+    `   개당 예산: ${budget || '-'}`,
+    `   희망 납기일: ${due || '-'}`,
+    `   인쇄/포장: ${printOpt || '-'}`,
+    '',
+    '■ 담당자 정보',
+    `   소속: ${company || '-'}`,
+    `   이름: ${name || '-'}`,
+    `   연락처: ${phone || '-'}`,
+    `   이메일: ${email || '-'}`,
+    '',
+    '■ 추가 요청사항',
+    `   ${memo || '-'}`,
+  ].join('\n');
+}
+
+function validate(){
+  const required = [
+    ['#qty', '수량'],
+    ['#company', '소속(회사/기관명)'],
+    ['#name', '담당자명'],
+    ['#phone', '연락처'],
+  ];
+  for (const [sel, label] of required){
+    if (!$(sel).value.trim()){
+      $(sel).focus();
+      toast(`${label}을(를) 입력해주세요`);
+      return false;
+    }
+  }
+  if (!selected && !$('#urlInput').value.trim()){
+    toast('상품을 검색·선택하거나 URL을 입력해주세요');
+    return false;
+  }
+  return true;
+}
+
+// ---------- 카카오톡 버튼 ----------
+$('#kakaoBtn').addEventListener('click', async ()=>{
+  if (!validate()) return;
+  const msg = buildMessage();
+  try {
+    await navigator.clipboard.writeText(msg);
+    toast('견적 내용이 복사되었어요! 카톡 채팅창에 붙여넣기 해주세요 👍');
+  } catch (err) {
+    // Clipboard API 실패 시 폴백
+    const ta = document.createElement('textarea');
+    ta.value = msg; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); toast('견적 내용이 복사되었어요!'); }
+    catch { toast('복사에 실패했어요. 직접 입력해 주세요.'); }
+    document.body.removeChild(ta);
+  }
+  setTimeout(()=>{
+    window.open(CONFIG.KAKAO_CHAT_URL, '_blank', 'noopener');
+  }, 600);
+});
+
+// ---------- 이메일 버튼 ----------
+$('#emailBtn').addEventListener('click', ()=>{
+  if (!validate()) return;
+  const msg = buildMessage();
+  const subject = `[견적요청] ${$('#company').value.trim()} · ${selected ? selected.title.slice(0,30) : '판촉 견적'}`;
+  const mailto = `mailto:${CONFIG.CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
+  window.location.href = mailto;
+});
+</script>
+</body>
+</html>
