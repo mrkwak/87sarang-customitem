@@ -18,8 +18,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'query is required' });
   }
 
-  const clientId = process.env.NAVER_CLIENT_ID;
-  const clientSecret = process.env.NAVER_CLIENT_SECRET;
+  const clientId = process.env.NAVER_CLIENT_ID?.trim();
+  const clientSecret = process.env.NAVER_CLIENT_SECRET?.trim();
 
   if (!clientId || !clientSecret) {
     return res.status(500).json({
@@ -38,7 +38,11 @@ export default async function handler(req, res) {
     });
     const data = await naverRes.json();
     if (!naverRes.ok) {
-      return res.status(naverRes.status).json({ error: 'Naver API error', detail: data });
+      return res.status(naverRes.status).json({
+        error: 'Naver API error',
+        detail: data,
+        _debug: { idLen: clientId.length, secretLen: clientSecret.length },
+      });
     }
     // 짧은 캐시
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
